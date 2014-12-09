@@ -1,9 +1,8 @@
-console.log("running ienabler.js");
+console.log("running iconable.js");
 
 var casper = require('casper').create();
 var username = casper.cli.get("username");
 var password = casper.cli.get("password");
-
 
 console.log(username, password);
 var links = [];
