@@ -6,6 +6,7 @@ At the UC Canterbury we need to login once a day with our username and password 
 
 Install
 --------
+- before you run: If you have never used cron before run `update-rc.d cron defaults` to activate it
 - run the install.sh script with `./install.sh`
 - IMPORTANT: Run command only 1 time, don't make mistakes!!!
 
