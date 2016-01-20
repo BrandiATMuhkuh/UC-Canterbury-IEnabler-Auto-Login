@@ -20,10 +20,15 @@ sleeptime=3
  
 mainCommand="{ echo $ucusername; sleep $sleeptime; echo $ucpassword; sleep $sleeptime; echo "1"; sleep $sleeptime; } |  telnet ienabler 259"
 
-echo $mainCommand
+#echo $mainCommand
 
-multibe="@hourly ""\""$mainCommand"\""
+multibe="@hourly eval ""\""$mainCommand"\""
 (crontab -l; echo "$multibe" ) | crontab -
 
-reboot="@reboot ""\""$mainCommand"\""
+reboot="@reboot eval ""\""$mainCommand"\""
 (crontab -l; echo "$reboot" ) | crontab -
+
+
+echo ""
+
+echo "added cronjob without problems"
