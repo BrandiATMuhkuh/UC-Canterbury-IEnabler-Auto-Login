@@ -1,19 +1,29 @@
 #!/bin/bash
-sudo apt-get install npm
-sudo npm install -g casperjs
-echo "--------------------";
+echo "This script will start ienabler on your pc every 6h and on startup. Please use this script only once to install."
+
+echo ""
+echo "TROUBLE SHOOTING: use command 'crontab -e' and delete all lines which include 'ienabler'"
+
+read -p "Do you want to continue? [y/n]" goon
+
+echo ""
 
 
-mainCommand="casperjs "$PWD"/ienabler.js --username="${1}" --password="${2}
+if [ "$goon" = "n" ]; then
+    echo "you stopped"
+    exit
+fi
+
+read -p "enter your UC username: " ucusername
+read -s -p "enter your UC password: " ucpassword
+sleeptime=3
+ 
+mainCommand="{ echo $ucusername; sleep $sleeptime; echo $ucpassword; sleep $sleeptime; echo "1"; sleep $sleeptime; } |  telnet ienabler 259"
+
 echo $mainCommand
 
 multibe="0 */6 * * * ""\""$mainCommand"\""
-#echo "$juhu" > "test.txt"
-(crontab -u $USER -l; echo "$multibe" ) | crontab -u $USER -
+(crontab -l; echo "$multibe" ) | crontab -
 
 reboot="@reboot ""\""$mainCommand"\""
-(crontab -u $USER -l; echo "$reboot" ) | crontab -u $USER -
-
-
-
-echo "--------------------";
+(crontab -l; echo "$reboot" ) | crontab -
