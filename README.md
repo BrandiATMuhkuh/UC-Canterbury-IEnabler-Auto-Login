@@ -13,7 +13,7 @@ Install
 Trouble shooting
 ----------
 - I made a mistake. E.g wrong username or password
-- Open your crontable with `crontab -u $USER -e`
+- Open your crontable with `crontab -e`
 - Delete everyting in it. (BTW: Nano is the best choice as a editor)
 - save with `^x` (Ctrl + x)
 - press `y` for save
