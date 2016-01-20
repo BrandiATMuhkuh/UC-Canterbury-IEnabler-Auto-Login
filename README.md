@@ -6,9 +6,8 @@ At the UC Canterbury we need to login once a day with our username and password 
 
 Install
 --------
-- run the install.sh script with `./install.sh username password`
+- run the install.sh script with `./install.sh`
 - IMPORTANT: Run command only 1 time, don't make mistakes!!!
-- Exampe command: `./install.sh je135 myPassword123456`
 
 
 Trouble shooting
