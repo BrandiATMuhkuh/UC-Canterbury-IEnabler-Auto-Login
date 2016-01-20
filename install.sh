@@ -22,7 +22,7 @@ mainCommand="{ echo $ucusername; sleep $sleeptime; echo $ucpassword; sleep $slee
 
 echo $mainCommand
 
-multibe="0 */6 * * * ""\""$mainCommand"\""
+multibe="@hourly ""\""$mainCommand"\""
 (crontab -l; echo "$multibe" ) | crontab -
 
 reboot="@reboot ""\""$mainCommand"\""
